@@ -1,0 +1,41 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx @tailwindcss/cli -i ./src/source.css -o ./src/output.css",
+    "build:webpack": "webpack --mode production",
+    "build": "npm run build:css && npm run build:webpack",
+    "dev:css": "npx @tailwindcss/cli -i ./src/source.css -o ./src/output.css --watch",
+    "dev:webpack": "webpack serve --open",
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:webpack\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KAICHA-KL/Todolist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KAICHA-KL/Todolist/issues"
+  },
+  "homepage": "https://github.com/KAICHA-KL/Todolist#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.12",
+    "tailwindcss": "^4.0.12"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-loader": "^7.1.2",
+    "daisyui": "^5.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
