@@ -12,9 +12,7 @@
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
         </div>
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
           <li><a>Today</a></li>
           <li><a>Completed</a></li>
           <li><a>Overdue</a></li>
@@ -48,38 +46,14 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn">Button</a>
+      <a class="btn">+ Task</a>
     </div>
   </div>
   
-  <div class="hero bg-base-100 min-h-0 h-auto pt-4">
-    <div class="hero-content text-center justify-center items-start py-2 w-full">
-      <div class="max-w-md w-full">
-        <h1 class="text-5xl font-bold">To-Do List</h1>
-        <p class="py-4">
-          Keep track of your tasks and stay organized.
-        </p>
-        
-        <!-- Task input form -->
-        <div class="form-control w-full mb-4">
-          <div class="input-group">
-            <input type="text" id="task-input" placeholder="Add a new task..." class="input input-bordered w-full" />
-            <button id="add-task-btn" class="btn btn-primary">Add</button>
-          </div>
-        </div>
-        
-        <!-- Tasks container -->
-        <ul id="todo-list" class="w-full space-y-2 mt-4">
-          <!-- Tasks will be added here dynamically -->
-        </ul>
-        
-        <!-- Task counter -->
-        <div class="mt-4 text-sm text-base-content/70">
-          <span id="tasks-count">0</span> tasks remaining
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <div id="todo-container" class="max-w-4xl mx-auto"></div>
+  <script type="module" src="./index.js"></script>
+  
+</body>
+</html>
 </body>
 </html>

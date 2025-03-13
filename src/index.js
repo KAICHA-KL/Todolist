@@ -2,5 +2,10 @@
 
 import './output.css';
 
-// Any JavaScript you want to include can go here
-console.log('Webpack is working!');
+// index.js
+import { TodoDom } from './todoDom.js';
+
+// Create an instance of TodoDom when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new TodoDom();
+});
