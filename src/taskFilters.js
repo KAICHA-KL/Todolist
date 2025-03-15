@@ -23,4 +23,8 @@ export class TaskFilters {
   static filterAll(tasks) {
     return tasks; // Return all tasks unfiltered
   }
+
+  static filterActive(tasks) {
+    return tasks.filter(task => !task.completed); // Show only incomplete tasks
+  }
 }

@@ -15,7 +15,7 @@ export class TaskActions {
         const moreBtn = taskElement.querySelector('.more-btn');
         const editBtn = taskElement.querySelector('.edit-btn');
         const deleteBtn = taskElement.querySelector('.delete-btn');
-        const projectSelect = taskElement.querySelector('.details select');
+        const projectSelect = taskElement.querySelector('.details .project-select');
 
         checkbox.addEventListener('change', () => {
             task.completed = checkbox.checked;
@@ -35,10 +35,20 @@ export class TaskActions {
         });
 
         editBtn.addEventListener('click', () => {
-            task.description = taskElement.querySelector('.textarea').value;
-            task.dueDate = taskElement.querySelector('.input[type="date"]').value;
-            task.priority = taskElement.querySelector('.select:not([name="projectId"])').value;
-            task.projectId = parseInt(projectSelect.value);
+            const descriptionEl = taskElement.querySelector('.details .textarea');
+            const dueDateEl = taskElement.querySelector('.details .input[type="date"]');
+            const priorityEl = taskElement.querySelector('.details .priority-select');
+
+            task.description = descriptionEl ? descriptionEl.value : task.description || '';
+            task.dueDate = dueDateEl ? dueDateEl.value : task.dueDate || '';
+            task.priority = priorityEl ? priorityEl.value : task.priority || 'low';
+            task.projectId = projectSelect ? parseInt(projectSelect.value) : task.projectId;
+
+            const taskIndex = todoDom.tasks.findIndex(t => t.id === task.id);
+            if (taskIndex !== -1) {
+                todoDom.tasks[taskIndex] = { ...task };
+            }
+
             todoDom.saveTasks();
             todoDom.renderTasks();
         });

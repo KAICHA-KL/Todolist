@@ -31,7 +31,7 @@ export class TaskRenderer {
             <div class="details hidden w-full mt-2 pt-2">
                 <textarea class="textarea textarea-bordered w-full">${task.description || ''}</textarea>
                 <input type="date" class="input input-bordered w-full" value="${task.dueDate || ''}">
-                <select class="select select-bordered w-full">
+                <select class="select select-bordered w-full priority-select">
                     <option value="low" ${task.priority === 'low' ? 'selected' : ''}>Low</option>
                     <option value="medium" ${task.priority === 'medium' ? 'selected' : ''}>Medium</option>
                     <option value="high" ${task.priority === 'high' ? 'selected' : ''}>High</option>

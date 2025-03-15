@@ -10,6 +10,8 @@ export class ProjectManager {
             { id: 1, name: "Project 1" }
         ];
         this.currentProjectId = 1; // Default to first project
+        // Save projects to localStorage immediately after initialization
+        this.saveProjectsToLocalStorage();
     }
 
     /**
