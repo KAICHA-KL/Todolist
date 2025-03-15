@@ -1,11 +1,12 @@
-// Import CSS files
-
-import './output.css';
-
 // index.js
+import './output.css';
 import { TodoDom } from './todoDom.js';
+import { ProjectManager } from './projectManager.js';
 
-// Create an instance of TodoDom when the DOM is loaded
+/**
+ * Initializes the Todo application when the DOM is fully loaded.
+ */
 document.addEventListener('DOMContentLoaded', () => {
-  new TodoDom();
+    const projectManager = new ProjectManager();
+    new TodoDom(projectManager);
 });
